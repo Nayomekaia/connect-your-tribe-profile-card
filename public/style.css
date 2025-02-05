@@ -1,0 +1,166 @@
+@font-face {
+  font-family: 'Kalnia';
+  src: url('/public/Kalnia/static/Kalnia-Regular.ttf') format('truetype');
+}
+
+body {
+  font-family: 'Kalnia';
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #FFE5E5;
+  min-height: 100vh; 
+}
+
+/* Flip card styles */
+.flip-card {
+  background-color: transparent;
+  width: 700px;
+  height: 400px;
+  perspective: 1000px;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border: 5px solid  #820204;
+  border-radius: 10px;
+}
+
+/* Flip card front styles */
+.flip-card-front {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #F7C6C6;
+  color: #820204;
+}
+
+/* Flip card back styles */
+.flip-card-back {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  grid-template-columns: 1fr 1fr; 
+  align-items: center;
+  justify-content: center; 
+  padding: 20px;
+  background-color:white;
+  transform: rotateY(180deg);
+  background: linear-gradient(to right,  #F7C6C6 50%, #820204 50%);
+}
+
+.content-left{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+}
+
+.content-right {
+  display: flex;
+  flex-direction: column;
+
+}
+
+/* Heading styles */
+h1 {
+  font-size: 3.5em;
+  max-width: 300px;
+  margin: 0; 
+  font-weight: bold;
+  justify-content: center;
+  text-align: center;
+}
+
+h2 {
+  grid-column: span 2;
+  font-size: 30px;
+  color: #820204 ;
+  margin: 0; 
+  font-weight: bold;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.highlight {
+  color: #F7C6C6; 
+  display: inline; 
+}
+/* Paragraph styles */
+p {
+  font-size: 1em; 
+  color: white;
+  text-align: left;
+}
+
+
+/* contact icons */
+.contact {
+  display: flex;
+  justify-content: space-evenly;
+  color: #000000;
+}
+
+.contact img {
+  width: 49px;
+  height: 46px;
+  transition: transform 0.2s ease;
+}
+
+.contact img:hover {
+  transform: scale(1.2);
+}
+
+/* Profile picture style */
+.profile-picture {
+  width: 150px; 
+  height: 180px;
+  border: 5px solid #820204;
+  transition: transform 0.2s ease; 
+}
+
+.profile-picture:hover {
+  transform: scale(1.2); 
+}
+
+button {
+  font-family: 'Kalnia';
+  background-color: #F7C6C6;  
+  color: #820204;        
+  font-size: 1.2rem;
+  font-weight: 400;
+  border: 2px solid #820204;  
+  border-radius: 40px;
+  padding: 10px 30px;
+  transition: all 0.3s ease; 
+}
+
+button:hover {
+  background-color: #820204; 
+  color: #F7C6C6; 
+}
+
+.background-star {
+  position: absolute;
+  top: 50%;
+  left: 50%; 
+  transform: translate(-50%, -50%);
+  max-width: 428px; 
+  z-index: -1;
+}
+
