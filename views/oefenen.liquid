@@ -1,0 +1,33 @@
+<h1>Data-Driven Web</h1>
+<p>Ik ben dus {{ person.name }}</p>
+
+<p>Het is vandaag {{ 'now' | date: "%d-%m-%Y (%H:%M, het is gelukt!)" }}</p>
+<p> ik ben geboren op {{ person.birthdate }}</p>
+
+<details><summary>Data</summary><pre>{{ person | json:4 }}</pre></details>
+
+<h2>Dit komt uit de custom object:</h2>
+
+<p> mijn hobby is {{ person.custom.hobby}}</p>
+<p> mijn favoriete skill is  {{ person.custom.favoriteskill}}</p>
+
+<div class="code-container">
+  <p> hallo ik ben{{ highlightedCode | safe }}  </p>
+</div>
+
+
+<style>
+.code-container {
+  padding: 1rem;
+  border-radius: 8px;
+  overflow-x: auto;
+  font-family: 'Fira Code', monospace;
+}
+
+.code-container pre {
+  margin: 0;
+}
+</style>
+
+
+
