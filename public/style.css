@@ -6,6 +6,7 @@
 body {
   font-family: 'Kalnia';
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   background-color: #FFE5E5;
@@ -18,6 +19,8 @@ body {
   width: 700px;
   height: 400px;
   perspective: 1000px;
+  overflow: visible;
+
 }
 
 .flip-card-inner {
@@ -164,3 +167,15 @@ button:hover {
   z-index: -1;
 }
 
+/* pop up effect*/
+
+
+#menu-items {
+  background-color: transparent;
+  border: none;
+
+img { 
+  height: 100vh;
+
+}
+}
