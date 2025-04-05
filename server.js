@@ -49,6 +49,10 @@ async function getHighlightedCode() {
   const code = 'const a = 1' // Voorbeeldcode
   return await codeToHtml(code, {
     lang: 'css',
+    theme: 'vitesse-dark'
+  })
+}
+
 // **Gebruik de functie in een route**
 app.get('/', async function (request, response) {
   const highlightedCode = await getHighlightedCode() // Wacht op de gesyntacteerde HTML
