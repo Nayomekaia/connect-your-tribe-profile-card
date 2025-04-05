@@ -14,16 +14,21 @@
    
   <section class="content-left">
     <img class="profile-picture" src="/profile-pic.png">
-    <button class="#pop-out-button">ABOUT ME</button>
+    
+  <section class="pop-out-button">
+  <button class="menu-toggle" id="menu-toggle" popovertarget="menu-items">
+    <div aria-hidden="true">ABOUT ME</div>
+  </button>
+  </section>
   </section>
 
   <section class="content-right">
     <article class="introduction">
-      <p>.introduction { </p>
+      <p>.introduction { </p> 
       <p>name: {{ person.name }} </p>
-      <p>age: {{ person.age }} </p>
-      <p>skill-set: {{ person.skill-set }} </p>
-      <p>favorite: {{ person.favorite }} </p>
+      <p>age: {{ person.custom.age }} </p>
+      <p>skill-set: {{ person.custom.skillset }} </p>
+      <p>favorite: {{ person.custom.favorite }} </p>
       <p>}</p>
     </article>
    
@@ -31,16 +36,20 @@
      <a href="mailto:Nayomedoelwijt@gmail.com">
      <img src="/email.png" alt="mijn e-mail" >
      </a>
-     <a href="tel:0629424348">
-     <img src="/phone.png" alt="mijn telefoon nummer">
+     <a href="https://www.linkedin.com/in/nayome-doelwijt-2370172a5/">
+     <img src="/phone.png" alt="mijn linkedin">
      </a>
      <a href="https://github.com/Nayomekaia">
      <img src="/github.png" alt="mijn github">
      </a>
-
   </section>
+</section>
 
 </section>
+</section>
+</section>
+<section class="pop-up" id="menu-items" popover anchor="menu-toggle">
+  <img class="scrapbook" src="/scrapbook.png" alt="scrapbook">
 </section>
 
 {% render 'partials/foot.liquid' %}
