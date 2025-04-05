@@ -6,6 +6,8 @@ import express from 'express'
 // Dit pakket is geïnstalleerd met `npm install` en staat in package.json.
 import { Liquid } from 'liquidjs';
 
+import { codeToHtml } from 'shiki';
+
 
 // Vul hier jouw eigen ID in (zie de instructies in de leertaak)
 const personID = 179
@@ -16,6 +18,9 @@ const personResponse = await fetch('https://fdnd.directus.app/items/person/' + p
 
 // // Zet de gegevens die we hebben opgehaald om naar een JSON-formaat, zodat we ze kunnen gebruiken.
 const personResponseJSON = await personResponse.json()
+
+const personData = personResponseJSON.data 
+personData.custom = JSON.parse(personData.custom)
 
 // Kijk of de gegevens kloppen door ze in de terminal te tonen.  
 // (Dit verschijnt in de Node.js terminal, niet in de browserconsole)  
@@ -47,6 +52,7 @@ app.get('/', async function (request, response) {
   // Maak de index.liquid-pagina zichtbaar, en stuur de gegevens (person) die we eerder hebben opgehaald mee naar die pagina.  
   // Deze gegevens worden gebruikt om de pagina in te vullen.
    response.render('index.liquid', {person: personResponseJSON.data})
+   response.render('index.liquid', {person: personData})
 })
 
 // Had je meerdere pagina's, zoals 'contact.html'?  
