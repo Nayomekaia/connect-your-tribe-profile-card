@@ -45,6 +45,7 @@ app.engine('liquid', engine.express());
 // Deze bestanden worden niet direct door de browser geladen, maar door de server gebruikt om dynamische pagina's te maken.
 app.set('views', './views')
 
+async function getHighlightedCode() {
 // Om Views weer te geven, heb je Routes nodig
 // Maak een GET route voor de index (meestal doe je dit in de root, als /)
 // In je visitekaartje was dit waarschijnlijk index.html
