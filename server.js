@@ -49,6 +49,15 @@ async function getHighlightedCode() {
   const code = 'const a = 1' // Voorbeeldcode
   return await codeToHtml(code, {
     lang: 'css',
+// **Gebruik de functie in een route**
+app.get('/', async function (request, response) {
+  const highlightedCode = await getHighlightedCode() // Wacht op de gesyntacteerde HTML
+  response.render('index.liquid', { 
+    person: personData,
+    highlightedCode // Stuur de HTML-string naar je template
+  })
+})
+
 // Om Views weer te geven, heb je Routes nodig
 // Maak een GET route voor de index (meestal doe je dit in de root, als /)
 // In je visitekaartje was dit waarschijnlijk index.html
