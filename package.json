@@ -27,6 +27,7 @@
   "homepage": "https://github.com/fdnd-task/connect-your-tribe-profile-card#readme",
   "dependencies": {
     "express": "^5.0.1",
-    "liquidjs": "^10.20.2"
+    "liquidjs": "^10.20.2",
+    "shiki": "^2.3.1"
   }
 }
