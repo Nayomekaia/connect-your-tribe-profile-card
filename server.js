@@ -46,6 +46,9 @@ app.engine('liquid', engine.express());
 app.set('views', './views')
 
 async function getHighlightedCode() {
+  const code = 'const a = 1' // Voorbeeldcode
+  return await codeToHtml(code, {
+    lang: 'css',
 // Om Views weer te geven, heb je Routes nodig
 // Maak een GET route voor de index (meestal doe je dit in de root, als /)
 // In je visitekaartje was dit waarschijnlijk index.html
@@ -63,6 +66,9 @@ app.get('/', async function (request, response) {
 // app.get('/contact', function (request, response) {
    // response.render('contact.liquid')
 // })
+app.get('/oefenen', async function (request, response) {
+  response.render('oefenen.liquid', {person: personData})
+})
 
 // Maak een POST route voor de indexpagina; hiermee kun je bijvoorbeeld gegevens van formulieren ontvangen.  
 // Nu doen we er nog niks mee, maar je kunt het later gebruiken.
@@ -81,3 +87,4 @@ app.listen(app.get('port'), function () {
  // Laat een bericht zien in de console om te zeggen dat de server draait en op welke poort.
   console.log(`Application started on http://localhost:${app.get('port')}`)
 })
+
