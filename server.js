@@ -68,17 +68,12 @@ app.get('/', async function (request, response) {
 app.get('/', async function (request, response) {
   // Maak de index.liquid-pagina zichtbaar, en stuur de gegevens (person) die we eerder hebben opgehaald mee naar die pagina.  
   // Deze gegevens worden gebruikt om de pagina in te vullen.
-   response.render('index.liquid', {person: personResponseJSON.data})
    response.render('index.liquid', {person: personData})
 })
 
 // Had je meerdere pagina's, zoals 'contact.html'?  
 // Maak dan voor elke pagina een nieuwe route aan, zodat de server weet wat te doen als iemand die pagina bezoekt.  
 // Bijvoorbeeld, voor de contactpagina:
-
-// app.get('/contact', function (request, response) {
-   // response.render('contact.liquid')
-// })
 app.get('/oefenen', async function (request, response) {
   response.render('oefenen.liquid', {person: personData})
 })
